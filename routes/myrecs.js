@@ -9,4 +9,6 @@ router.get('/new', myrecsController.new);
 
 router.get('/edit', myrecsController.edit);
 
+router.post('/new', myrecsController.search);
+
 module.exports = router;
