@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <a href="/myrecs/new">New Search</a>
+    <% records.results.forEach(function (result) { %>
+    <ul>
+      <li>
+        <a href="https://www.discogs.com<%= result.uri %>">link</a>
+        <%= result.title %>
+        <img src="<%= result.thumb %>">
+      </li> 
+  </ul>
+  <% }) %>
+</body>
+</html>

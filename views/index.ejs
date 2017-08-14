@@ -7,11 +7,11 @@
   <body>
     <h1>GetRecd</h1>
     <ul>
-      <$ if (user) { $>
+      <% if (user) { %>
         <li><a href="/logout">Log Out</a></li>
-      <$ } else { $>
+      <% } else { %>
         <li><a href="/auth/google">Login with Google</a></li>
-        <$ } $>
+        <% } %>
     </ul>
     <a href="/myrecs">My Recs</a>
   </body>
