@@ -16,7 +16,7 @@ function edit(req, res) {
 
 function search(req, res) {
   var options = {
-    url: rootURL + 'database/search?q=' + req.body.search,
+    url: rootURL + 'database/search?q=' + req.body.search + '&release_title',
     headers: {
       'User-Agent': 'w1lujeng',
       'Authorization': 'Discogs key=' + process.env.DISCOGS_KEY + ',' 
@@ -25,9 +25,7 @@ function search(req, res) {
   };
   request(options, function(err, response, body) {
     var records = JSON.parse(body);
-
-    // res.render('search-results', {records});\
-    res.render('myrecs/new');
+    res.render('myrecs/search', {records} );
     console.log(records);
   });
 }
