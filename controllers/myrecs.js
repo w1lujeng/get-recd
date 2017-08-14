@@ -19,8 +19,8 @@ function search(req, res) {
     url: rootURL + 'database/search?q=' + req.body.search,
     headers: {
       'User-Agent': 'w1lujeng',
-      'Authorization': 'Discogs key=' + 'YtAzejeNpYnjJWwHWLGV,'
-      + 'secret=' + 'xxNpRMFrRkdTcCMHZMnzggHeRdnXnoLY'
+      'Authorization': 'Discogs key=' + process.env.DISCOGS_KEY + ',' 
+      + 'secret=' + process.env.SECRET
     }
   };
   request(options, function(err, response, body) {
