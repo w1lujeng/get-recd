@@ -26,7 +26,7 @@ function search(req, res) {
   };
   request(options, function(err, response, body) {
     var records = JSON.parse(body);
-    res.render('myrecs/search', {records, user: req.user} );
+    res.render('myrecs/add', {records, user: req.user} );
     console.log(records);
   });
 }
