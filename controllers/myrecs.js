@@ -16,7 +16,8 @@ function edit(req, res) {
 
 function search(req, res) {
   var options = {
-    url: rootURL + 'database/search?q=' + req.body.search + '&release_title',
+    url: rootURL + 'database/search?q=' + req.body.search + '&format_exact=Vinyl&type=release&artist=' + req.body.search + '&per_page=100',
+    
     headers: {
       'User-Agent': 'w1lujeng',
       'Authorization': 'Discogs key=' + process.env.DISCOGS_KEY + ',' 
