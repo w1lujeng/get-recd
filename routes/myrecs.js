@@ -6,5 +6,6 @@ router.get('/', myrecsController.index);
 router.get('/new', myrecsController.new);
 router.get('/edit', myrecsController.edit);
 router.post('/add', myrecsController.search);
+router.post('/', myrecsController.add);
 
 module.exports = router;

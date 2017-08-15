@@ -1,13 +1,13 @@
 <%- include('./../_partials/header') %>
-    <a href="/myrecs/new">New Search</a>
-    <% records.results.forEach(function (result) { %>
-    <ul>
-      <li>
-        <a href="https://www.discogs.com<%= result.uri %>">link</a>
-        <%= result.title %>
-        <img src="<%= result.thumb %>">
-      </li> 
-  </ul>
-  <% }) %>
+    <a href="/myrecs/new">New Search</a><br>
+    <form action="/myrecs" method="POST">
+      <input type="submit"><br><br>
+      <% records.results.forEach(function (record) { %>
+        <input type="checkbox" name="id" value="<%= record.id %>">
+        <a href="https://www.discogs.com<%= record.uri %>">link</a>
+        <%= record.title %>
+        <img src="<%= record.thumb %>"><br><br>
+      <% }) %>
+    </form>
 </body>
 </html>

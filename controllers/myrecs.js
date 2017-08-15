@@ -32,9 +32,16 @@ function search(req, res) {
   });
 }
 
+function add(req, res) {
+  
+  console.log(req.body);
+  res.redirect('myrecs/new');
+}
+
 module.exports = {
   index,
   new: newRec,
   edit,
-  search
+  search,
+  add
 }
