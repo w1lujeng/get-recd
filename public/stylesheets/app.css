@@ -1,4 +1,6 @@
 
+
+
 /* *{
 border: 1px solid red;
 }*/
@@ -51,7 +53,10 @@ color: white;
 .butstyle {
 color: black;
 background-color: white;
-border-radius: 7px;
+border-top-right-radius: 15px;
+border-bottom-right-radius: 15px;
+margin-top: 12%;
+height: 25px;
 }
 
 input {
@@ -133,7 +138,32 @@ margin-top: 10%;
 }
 
 .navbartop {
-    background-color: black !important;
+background-color: black !important;
+}
+
+.footerLinks li {
+    padding: 0 10px;
+}
+
+a {
+    color: black;
+}
+
+.footerLinks ul li {
+    display: inline-block;
+    text-decoration: underline;
+}
+
+.footerLinks {
+  text-align: center !important;
+}
+
+.navbarsearch {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    height: 25px !important;
+    margin-top: 3%;
+
 }
 
 .about {
