@@ -29,5 +29,23 @@ Next steps
 
 The discogs database is HUGE. In the future, we'd would like to offer different search parameters.  such as country(on the map, not Texas) or genre.  We would also like to include commenting on lists, rating lists and sharing lists with your friends.
 
+| URI | HTTP Verb | Use Case
+  --- | ------- | ------  
+ /api/lists | GET  | retrieve all lists  
+ /api/lists/:id | GET | a single list  
+
+
+
+
+
+| URI | HTTP Verb | Use Case
+| --- | --------- | -------- |
+/myrecs/ | GET | retrieve all lists
+/myrecs/new | GET | the form to make a new list
+/myrecs/add | POST | add the new list
+/myrecs/ |  POST |
+/myrecs/about | GET | learn about the app
+/myrecs/:id | DELETE |retrieve all lists
+
 
 THANKS

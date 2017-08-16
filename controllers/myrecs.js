@@ -48,6 +48,21 @@ function about(req, res) {
   res.render('myrecs/about', {user: req.user});
 }
 
+function edit(req, res) {
+
+}
+function update(req, res) {
+  
+}
+
+function deleteList(req, res) {
+  List.findById(req.params.id, (err, list) => {
+    list.remove();
+    list.save();
+    res.redirect('/');
+  });
+}
+
 //function page(req, res) {
   //res.send('page, need to do');
 //}
@@ -58,6 +73,7 @@ module.exports = {
   edit,
   search,
   add,
-  about
+  about,
+  delete: deleteList
   //page
 }

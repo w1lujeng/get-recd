@@ -1,4 +1,28 @@
 <%- include('./../_partials/header') %>
   <h1>Edit My Rec</h1>
+  <div class="row"> 
+    <div>
+        add to list: <%= newList.title %> <br>
+        (id = <%= newList._id %>)
+      </div>
+
+    <a href="/myrecs/new">New Search</a><br>
+
+    <form action="/myrecs" method="PUT">
+        <input type="submit"><br><br>
+        <% records.results.forEach(function (record) { %>
+          
+        <input type="checkbox" name="id" value="<%= record.id %>">
+          <br><br>
+          <a href="https://www.discogs.com<%= record.uri %>"><img src="<%= record.thumb %>"></a>
+          <%= record.title %>
+          <br><br>
+        <% }) %>
+      </form>
+      
+  </div>   
+
+
+
 </body>
 </html>
