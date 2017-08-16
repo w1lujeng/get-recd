@@ -140,3 +140,42 @@ margin-top: 10%;
     padding: 100px;
   
   }
+
+.button.hollow.button {
+    color: black;
+    background-color: white;
+    border-color: lightgray;
+    border-radius: 20px;
+    font-family: sans-serif;
+    }
+    
+.SpecRec {
+    font-family: 'Allerta Stencil', sans-serif;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 12px;
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+    }
+
+.UserRec {
+    font-family: 'Allerta Stencil', sans-serif;
+    text-align: center;
+    font-size: 38px;
+    margin-top: 12px; 
+}
+    
+.albums {
+    text-align: center;
+    font-size: 13px;
+    }
+    
+.buttons {
+    text-align: center;
+    margin-top: 22px;
+    }
+    
+.cover {
+    border-radius: 13px;
+    }
