@@ -20,7 +20,7 @@ Technologies used
 
 Getting started
 
-get rec'd is deployed using Heroku at the following url
+get rec'd is deployed using Heroku at https://get-recd.herokuapp.com
 
 See our planning page at [Trello](https://trello.com/b/J5WLmF8H/get-recd)
 

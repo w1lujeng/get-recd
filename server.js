@@ -16,6 +16,7 @@ require('./config/passport');
 
 var index = require('./routes/index');
 var myrecs = require('./routes/myrecs');
+var api = require('./routes/api');
 var cors = require('cors');
 
 // view engine setup
@@ -35,9 +36,10 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(cors());
 app.use('/', index);
 app.use('/myrecs', myrecs);
+app.use('/api/lists', api);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
