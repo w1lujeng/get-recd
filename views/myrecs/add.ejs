@@ -1,21 +1,41 @@
 <%- include('./../_partials/header') %>
+  <div class="row"> 
     <div>
-      add to list: <%= newList.title %> <br>
-      (id = <%= newList._id %>)
-    </div>
+        add to list: <%= newList.title %> <br>
+        (id = <%= newList._id %>)
+      </div>
 
     <a href="/myrecs/new">New Search</a><br>
 
     <form action="/myrecs" method="POST">
-      <input type="submit"><br><br>
-      <% records.results.forEach(function (record) { %>
+        <input type="submit"><br><br>
+        <% records.results.forEach(function (record) { %>
+          
         <input type="checkbox" name="id" value="<%= record.id %>">
-        <a href="https://www.discogs.com<%= record.uri %>">link</a>
-        <%= record.title %>
-        <img src="<%= record.thumb %>"><br><br>
-      <% }) %>
-    </form>
-
+          <br><br>
+          <a href="https://www.discogs.com<%= record.uri %>"><img src="<%= record.thumb %>"></a>
+          <%= record.title %>
+          <br><br>
+        <% }) %>
+      </form>
+      <div>
+          <div>per page = <%= pagination.per_page %></div>
+          <div>total items = <%= pagination.items %></div>
+          <div>current page = <%= pagination.page %></div>
+          <div>number of pages = <%= pagination.pages %></div>
+          <div>current search artist = <%= currentSearch %></div>
     
+        <% for (var i = 1; i <= pagination.pages; i++ ) { %>
+            <span>
+              <form action="/myrecs/add/<%= newList._id %>" method="post">
+                <input class="input songinput" name="search" placeholder="Enter an Artist Name" type="hidden" value="<%= currentSearch %>">
+                <input type="hidden" name="page" value="<%= i %> ">
+                <button type="submit" href="/database/search?q=<%= currentSearch %>&type=master&format_exact=Vinyl&-format_exact=cd&-format_exact=cassette&-format=promo&type=release&artist=<%= currentSearch %>&per_page=50&page=<%= i %>"><%= i %></button>
+              </form>
+            </span>
+          <% } %>
+    
+      </div>
+  </div>   
 </body>
 </html>
