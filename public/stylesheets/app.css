@@ -58,6 +58,11 @@ border-bottom-right-radius: 15px;
 margin-top: 12%;
 height: 25px;
 }
+.butstyles {
+color: black;
+background-color: white;
+}
+
 
 input {
 height: 31px !important;
