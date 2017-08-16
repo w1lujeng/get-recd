@@ -1,5 +1,11 @@
 <%- include('./../_partials/header') %>
+    <div>
+      add to list: <%= newList.title %> <br>
+      (id = <%= newList._id %>)
+    </div>
+
     <a href="/myrecs/new">New Search</a><br>
+
     <form action="/myrecs" method="POST">
       <input type="submit"><br><br>
       <% records.results.forEach(function (record) { %>
@@ -9,5 +15,7 @@
         <img src="<%= record.thumb %>"><br><br>
       <% }) %>
     </form>
+
+    
 </body>
 </html>
