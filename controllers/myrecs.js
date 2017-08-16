@@ -48,11 +48,16 @@ function about(req, res) {
   res.render('myrecs/about', {user: req.user});
 }
 
+function page(req, res) {
+  res.send('page, need to do');
+}
+
 module.exports = {
   index,
   new: newRec,
   edit,
   search,
   add,
-  about
+  about,
+  page
 }
