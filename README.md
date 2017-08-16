@@ -28,3 +28,6 @@ See our planning page at [Trello](https://trello.com/b/J5WLmF8H/get-recd)
 Next steps
 
 The discogs database is HUGE. In the future, we'd would like to offer different search parameters.  such as country(on the map, not Texas) or genre.  We would also like to include commenting on lists, rating lists and sharing lists with your friends.
+
+
+THANKS
