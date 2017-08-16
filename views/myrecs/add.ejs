@@ -18,24 +18,7 @@
           <br><br>
         <% }) %>
       </form>
-      <div>
-          <div>per page = <%= pagination.per_page %></div>
-          <div>total items = <%= pagination.items %></div>
-          <div>current page = <%= pagination.page %></div>
-          <div>number of pages = <%= pagination.pages %></div>
-          <div>current search artist = <%= currentSearch %></div>
-    
-        <% for (var i = 1; i <= pagination.pages; i++ ) { %>
-            <span>
-              <form action="/myrecs/add/<%= newList._id %>" method="post">
-                <input class="input songinput" name="search" placeholder="Enter an Artist Name" type="hidden" value="<%= currentSearch %>">
-                <input type="hidden" name="page" value="<%= i %> ">
-                <button type="submit" href="/database/search?q=<%= currentSearch %>&type=master&format_exact=Vinyl&-format_exact=cd&-format_exact=cassette&-format=promo&type=release&artist=<%= currentSearch %>&per_page=50&page=<%= i %>"><%= i %></button>
-              </form>
-            </span>
-          <% } %>
-    
-      </div>
+      
   </div>   
 </body>
 </html>
