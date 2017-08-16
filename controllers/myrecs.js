@@ -44,10 +44,15 @@ function add(req, res) {
   res.redirect('myrecs/new');
 }
 
+function about(req, res) {
+  res.render('myrecs/about', {user: req.user});
+}
+
 module.exports = {
   index,
   new: newRec,
   edit,
   search,
-  add
+  add,
+  about
 }
