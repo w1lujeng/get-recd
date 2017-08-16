@@ -7,15 +7,12 @@
     <div class="buttons">
     <form style="display:inline" action="/myrecs/new" method="get">  
     <button class="button hollow button">New Search</button>
-    </form>
-    <form style:"display:inline" action="/myrecs" method="POST">
-    <button class="button hollow button">Submit</button><br>
-    </form>
   </div>
-  <div class="SpecRec">
-    <form style:"display:inline" action="/myrecs" method="POST">
+  <div class="SpecRec row">
+    <form style:"display:inline" action="/myrecs" method="POST"> 
+      <input type="Submit">Submit</input>
         <% records.results.forEach(function (record) { %>
-          <div class="albums">
+          <div class="albums large-12 columns">                          
             <input type="checkbox" name="id" value="<%= record.id %>">
             <a href="https://www.discogs.com<%= record.uri %>"><img src="<%= record.thumb %>"></a>
             <br>
