@@ -7,7 +7,7 @@ router.get('/new', myrecsController.new);
 // router.get('/edit', myrecsController.edit);
 // router.get('/add/:listId', myrecsController.page);
 router.post('/add', myrecsController.search);
-router.post('/', myrecsController.add);
 router.get('/about', myrecsController.about);
 router.delete('/:id', myrecsController.delete);
+router.post('/:id', myrecsController.add);
 module.exports = router;
