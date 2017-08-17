@@ -1,0 +1,17 @@
+<%- include ../header.ejs %>
+    <h1>
+      <%= list.name %>
+    </h1>
+
+<div> 
+    <% if (albums.length) {%>
+      <% albums.list.forEach(function(album) {%>
+        
+      <a href="/records/new"> Delete Record </a>
+      })
+}
+</div>
+
+<div >
+  <a href="/records/new"> Add Record </a>
+</div>
