@@ -12,30 +12,37 @@
 <body>
     <div class="top-bar headerpart">
         <div class="top-bar-left">
-            <ul class="dropdown menu" data-dropdown-menu="">
-                <li class="menu-text linav" id="logo">GetRecd</li><%if (user) { %>
+            <ul class="dropdown menu" data-dropdown-menu>
+            <li class="menu-text linav" id="logo">GetRecd</li><%if (user) { %>
+              <li>
+                <a class="linav" href="/logout">Log Out</a>
+              </li><%} else { %>
+              
+              <li>
+                <a class="linav" href="/auth/google">Login with Google</a>
+              </li><%} %>
+              <li>
+                <a class="linav" href="/myrecs/about">About</a>
+              </li>
+              <% if (user) { %>
                 <li>
-                    <a class="linav" href="/logout">Log Out</a>
-                </li><%} else { %>
-                <li>
-                    <a class="linav" href="/auth/google">Login with Google</a>
-                </li><%} %>
-                <li>
-                    <a class="linav" href="/myrecs">My Recs</a>
+                <a class="linav" href="/myrecs">My Recs</a>
                 </li>
-            
-                <!-- <li>
-                    <a class="linav" href="#">Top Recs</a>
-                </li> -->
                 <li>
-                    <a class="linav" href="/myrecs/about">About</a>
+                  <a class="linav" href="/myrecs/new">Create A Rec</a>
+                </li>                
+                <li>
+                <a class="linav" href="/myrecs/edit">Edit A Rec</a>
                 </li>
+                <%} %>
+                
             </ul>
         </div>
-        <div class="top-bar-right butinput">
+              
+        <!-- <div class="top-bar-right butinput">
             <ul class="menu navbartop">
                 <li><input class="navbarsearch" placeholder="Search" type="search"></li>
                 <li><button class="button tiny butstyle" type="button">Search</button></li>
             </ul>
-        </div>
+        </div> -->
     </div>
