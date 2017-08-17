@@ -63,9 +63,7 @@ function about(req, res) {
   res.render('myrecs/about', {user: req.user});
 }
 
-function edit(req, res) {
 
-}
 function update(req, res) {
   
 }
