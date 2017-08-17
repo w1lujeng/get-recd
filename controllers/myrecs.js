@@ -41,8 +41,23 @@ function search(req, res) {
 
 function add(req, res) {
   console.log(req.body);
+  var options = {
+  url: rootURL + 'masters/' + req.body.id,
+  headers: {
+  'User-Agent': 'w1lujeng',
+  'Authorization': 'Discogs key=' + process.env.DISCOGS_KEY + ','
+  + 'secret=' + process.env.SECRET
+  }
+  };
+  request(options, function(err, response, body) {
+  var record = JSON.parse(body);
+  //var album = new Album({title: record.title, thumb: record.images[0].uri, url: record.uri });
+  //console.log(record.title);
+  //console.log(record.uri);
+  //console.log(record.images[0].uri);
+  });
   res.redirect('myrecs/new');
-}
+  }
 
 function about(req, res) {
   res.render('myrecs/about', {user: req.user});
