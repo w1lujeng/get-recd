@@ -2,7 +2,7 @@ var request = require('request');
 const rootURL = 'https://api.discogs.com/';
 var passport = require('passport');
 var List = require('../models/list');
-var Album = require('../models/album');
+var Album = require('../models/list')
 
 function index(req, res) {
   res.render('myrecs/index', {user: req.user});
@@ -18,7 +18,9 @@ function edit(req, res) {
 
 function search(req, res) {
   var listTitle = req.body.title;
+  console.log('listTitle =', listTitle)
   var list = new List({title: listTitle})
+  console.log('list =', list)
   list.save(function (err, newList) {
     console.log('err =', err)
     if (err) return res.json({err: err})
@@ -33,38 +35,30 @@ function search(req, res) {
     };
     request(options, function(err, response, body) {
       var records = JSON.parse(body);
-      res.render('myrecs/add', {records, user: req.user, newList: newList, listId: list._id.toString()});
+      res.render('myrecs/add', {records, user: req.user, newList: newList} );
     });
   })
 }
 
 function add(req, res) {
-  var listId = req.params.id;
-  var record_ids = req.body.id;
-  if (typeof record_ids === 'string') {
-    record_ids = [record_ids];
+  console.log(req.body);
+  var options = {
+  url: rootURL + 'masters/' + req.body.id,
+  headers: {
+  'User-Agent': 'w1lujeng',
+  'Authorization': 'Discogs key=' + process.env.DISCOGS_KEY + ','
+  + 'secret=' + process.env.SECRET
   }
-  record_ids.forEach(function(record_id) {
-    var options = {
-    url: rootURL + 'masters/' + record_id,
-    headers: {
-    'User-Agent': 'w1lujeng',
-    'Authorization': 'Discogs key=' + process.env.DISCOGS_KEY + ',' + 'secret=' + process.env.SECRET
-    }
   };
-    request(options, function(err, response, body) {
-      var record = JSON.parse(body);
-      var album = new Album({title: record.title, thumb: record.images[0].uri, url: record.uri, api_id: record.id });
-      album.save(function(err, album) {
-        List.findById(listId, function(err, list) {
-          list.albums.push(album._id);
-          list.save();
-          res.redirect('/');
-        })
-      });
-    });
+  request(options, function(err, response, body) {
+  var record = JSON.parse(body);
+  //var album = new Album({title: record.title, thumb: record.images[0].uri, url: record.uri });
+  //console.log(record.title);
+  //console.log(record.uri);
+  //console.log(record.images[0].uri);
   });
-};
+  res.redirect('myrecs/new');
+  }
 
 function about(req, res) {
   res.render('myrecs/about', {user: req.user});
