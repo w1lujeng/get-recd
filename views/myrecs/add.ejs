@@ -1,16 +1,6 @@
 <%- include('./../_partials/header') %>
-  <div class="UserRec"> 
-    <div>
-        Add to your list: <%= newList.title %> <br>
-        (id = <%= newList._id %>)
-    </div>
-    <div class="buttons">
-    <form style="display:inline" action="/myrecs/new" method="get">  
-    <button class="button hollow button">New Search</button>
-  </div>
-  <div class="SpecRec row">
     <form style:"display:inline" action="/myrecs" method="POST"> 
-      <input type="Submit">Submit</input>
+      <input type="submit"></input>
         <% records.results.forEach(function (record) { %>
 
           <div class="albums large-12 columns">                          
@@ -24,7 +14,7 @@
           </div>
         <% }) %>
       </form>
-      
-  </div>   
+
+  
 </body>
 </html>
